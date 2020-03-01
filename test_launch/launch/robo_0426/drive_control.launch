@@ -1,0 +1,10 @@
+<launch>
+  <node pkg="drive_controller" type="drive_control_vcu_node" name="drive_control_vcu_node" output="screen">
+    <rosparam file="$(find drive_controller)/params/vcu_control.yaml" command="load" />
+  </node>
+  <node pkg="drive_controller" type="vcu_feedback_node" name="vcu_feedback_node" output="screen">
+  </node>
+
+  <node pkg="drive_controller" type="vcu_eps_debug_node" name="vcu_eps_debug_node" output="screen">
+  </node>
+</launch>

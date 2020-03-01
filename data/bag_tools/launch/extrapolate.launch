@@ -1,0 +1,7 @@
+<launch>
+  <node pkg="bag_tools" type="extrapolate_node" name="extrapolate_node" output="screen">
+    <param name="bag_name_i" value="/home/zh/workspace/catkin_ws/src/ddl_0725/map_0725/1008_1200_all.bag" />
+    <param name="bag_name_o" value="$(find bag_file)/1008_1200_extrapolate.bag" />
+    <rosparam file="$(find bag_tools)/params/extrapolate.yaml" command="load" />
+  </node>
+</launch>

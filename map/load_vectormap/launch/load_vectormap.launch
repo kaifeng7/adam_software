@@ -1,0 +1,7 @@
+<launch>
+    
+    <node pkg="load_vectormap" type="load_vectormap_node" name="load_vectormap_node" output="screen">
+        <param name="vectormap" value="$(find load_vectormap)/map/zhiquan_v2" />
+    </node>
+</launch>
+

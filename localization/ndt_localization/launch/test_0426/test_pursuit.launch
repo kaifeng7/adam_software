@@ -1,0 +1,16 @@
+<launch>
+  <include file="$(find lslidar_c16_decoder)/launch/lslidar_c16.launch" />
+  <include file="$(find encoder_driver)/launch/encoder.launch" />
+  <include file="$(find imu_driver)/launch/imu_driver.launch" />
+
+  <include file="$(find ndt_localization)/launch/test_0426/test_ndt2.launch" />
+
+  <!-- <node pkg="map_server" type="map_server" name="map_server" args="$(find static_map)/map_file/robo_0426.yaml" /> -->
+
+  <node pkg="pf_localization" type="trajectory_loader.py" name="traj_loader">
+    <param name="trajectory" value="$(find ndt_localization)/trajectories/smoothed-2019-04-27-19-24-54.traj" />
+    <param name="publish" value="true" />
+    <param name="topic" value="/local_trajectories" />
+  </node>
+
+</launch>

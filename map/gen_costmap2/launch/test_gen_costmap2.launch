@@ -1,0 +1,13 @@
+<launch>
+
+  <include file="$(find ndt_localization)/launch/test_ndt.launch" />
+
+  <node pkg="map_server" type="map_server" name="map_server" args="$(find static_map)/map_file/map_1008_filtered_gridmap.yaml">
+    <remap from="/map" to="/global_costmap" />
+  </node>
+
+  <node pkg="gen_costmap2" type="gen_costmap2_node" name="gen_costmap2_node" output="screen">
+    <remap from="/obstacle_pc" to="/points_no_ground" />
+    <remap from="/updated_map" to="/costmap" />
+  </node>
+</launch>

@@ -1,0 +1,38 @@
+pwm1_ml: 14800.
+pwm1_mh: 15200.
+pwm1_max: 15400.
+pwm1_min: 14400.
+pwm1_min_f: 15100. # 前进的最小速度对应的 pwm
+pwm1_min_b: 14715. # 倒退的最小速度对应的 pwm
+pwm1_max_diff: 60.
+pwm2_ml: 15600.
+pwm2_mh: 15700.
+pwm2_max: 19250.
+pwm2_min: 11450.
+pwm2_max_diff: 4000.
+device_ip: "192.168.1.102"
+udp_port: 8888
+mcu_ip: "192.168.1.101"
+mcu_udp_port: 8887
+udp_wait: 50.
+pwm_duration: 100
+default_acc: 3.0
+default_ang_vel: 0.5
+v1: 0.6 # 
+v2: 2.8 #
+v1_pwm: 15200. # 需要校准
+v2_pwm: 15400. #
+v3: -1.0
+v4: -2.0
+v3_pwm: 14700.
+v4_pwm: 14600.
+delta_ang_r: 0.035
+delta_ang_r_pwm: 285.
+delta_ang_l: 0.035
+delta_ang_l_pwm: 315.
+use_speed_feedback: false 
+kp: 1.2 
+ki: 1.5
+kd: 0
+pwm1_stop: 15000
+speed_feedback_duration: 100

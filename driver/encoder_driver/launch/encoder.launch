@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="encoder_driver" type="encoder_node" name="encoder_node" launch-prefix="sudo">
+        <rosparam file="$(find encoder_driver)/params/encoder_params.yaml" command="load"/>
+    </node>
+</launch>

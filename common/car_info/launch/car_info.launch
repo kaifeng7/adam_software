@@ -1,0 +1,6 @@
+<launch>
+    <include file="$(find car_info)/launch/car_basic_info.launch" /> 
+
+    <include file="$(find car_info)/launch/car_limit_info.launch" />
+
+</launch>

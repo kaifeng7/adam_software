@@ -1,0 +1,7 @@
+<launch>
+    <node pkg="car_info" type="car_limit_info" name="car_limit_info">
+        <rosparam file = "$(find car_info)/params/car_limit_info.yaml" command = "load"/>
+
+    </node>
+
+</launch>

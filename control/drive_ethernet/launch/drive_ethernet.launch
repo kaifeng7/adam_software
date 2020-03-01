@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="drive_ethernet" type="drive_ethernet" name="drive_ethernet_node" output="screen">
+    </node>
+</launch>

@@ -1,0 +1,9 @@
+<launch>
+  <node pkg="can_driver" type="can_driver_node" name="can_driver_node" output="screen">
+    <remap from="/ctrl_cmd" to="/vehicle_cmd" />
+    <param name="r_canid" value="can0" />
+    <param name="t_canid" value="can1" />
+    <param name="r_can_addr" value="" />
+    <param name="t_can_addr" value="203" />
+  </node>
+</launch>

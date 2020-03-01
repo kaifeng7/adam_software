@@ -1,0 +1,15 @@
+can_interface: can1
+max_speed_f: 3
+max_speed_b: 1
+max_acc_time: 25.5
+min_acc_time: 0.2
+default_acc_time: 1.0
+max_cmd_f: 1700
+max_cmd_b: 500
+max_angle: 0.785
+min_angle: -0.785
+steering_wheel_ratio: 8
+max_angle_cmd: 500
+min_angle_cmd: -500
+default_angle_acc: 0.2618
+angle_resolution: 0.5

@@ -1,0 +1,4 @@
+is_linear_interpolation: false
+lookahead_distance_ratio: 3.0
+minimum_lookahead_distance: 4.0
+loop_rate: 30

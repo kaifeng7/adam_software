@@ -1,0 +1,29 @@
+<launch>
+  <rosparam file="$(find ndt_localization)/params/global.yaml" command="load" />
+
+  <include file="$(find common)/launch/static_tf.launch" />
+
+  <include file="$(find odom_imu)/launch/odom_imu.launch" />
+
+  <node pkg="ndt_localization" type="ndt_localization_node" name="ndt_localization_node">
+    <rosparam file="$(find ndt_localization)/params/test.yaml" />
+    <param name="latest_poses_path" value="$(find ndt_localization)/params/latest_poses.yaml" />
+<<<<<<< HEAD:localization/ndt_localization/launch/test_0426/test_ndt2.launch
+    <param name="keypose_path" value="$(find bag_file)/pcd/pose3d_1574997670.pcd" />
+    <param name="keyframes_path" value="$(find bag_file)/pcd/frames_no_ground_1574997670.pcd" />
+    <!--remap from="/lslidar_point_cloud" to="/points_no_ground" /-->
+=======
+    <param name="keypose_path" value="$(find bag_file)/pcd/nantong_pose3d.pcd" />
+    <param name="keyframes_path" value="$(find bag_file)/pcd/nantong_no_ground.pcd" />
+    <remap from="/lslidar_point_cloud" to="/velodyne_points" />
+>>>>>>> 154b81943f122f31fa25d324f68bfbf6d763dfe4:test_launch/launch/robo_1129/localization1129.launch
+  </node>
+
+  <include file="$(find ray_ground_filter)/launch/ray_ground_filter.launch" />
+
+  <node pkg="gen_costmap" type="gen_costmap" name="local_costmap_node" output="screen">
+    <remap from="/lslidar_point_cloud" to="/points_no_ground" />
+    <remap from="/global_costmap" to="/map" />
+    <rosparam file="$(find gen_costmap)/cfg/gen_costmap.yaml" command="load" />
+  </node>
+</launch>

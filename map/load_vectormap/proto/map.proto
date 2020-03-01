@@ -1,0 +1,155 @@
+syntax = "proto3";
+
+package adam.map;
+
+// Check OpenDRIVEFormatSpecRev1.4H for further information.
+
+// TODO: maybe add s for repeated fields.
+
+message Header {
+//    uint32 rev_major = 1; // uShort in spec file
+//    uint32 rev_minor = 2; // uShort in spec file
+    float  version = 3;
+    string name = 4;
+    string date = 5;
+//    double north = 4;
+//    double south = 5;
+//    double east = 6;
+//    double west = 7;
+}
+
+message Geometry {
+    double s = 1;
+    double x = 2;
+    double y = 3;
+    double hdg = 4;
+    double length = 5;
+    oneof shape {
+         Line line = 6;
+         Arc arc = 7;
+//         Spiral spiral = 8;
+//         Poly3 poly3 = 9;
+//         ParamPoly3 paramPoly3 = 10;
+    }
+}
+
+message Line {}
+
+message Arc {
+    double curvature = 1;
+}
+
+//message Spiral {}
+
+//message Poly3 {}
+
+//message ParamPoly3 {}
+
+message PlainView {
+    repeated Geometry geometry = 1;
+}
+
+//message ElevationProfile {}
+
+//message LateralProfile {}
+
+message Lanes {
+    LaneSection lane_section = 1;
+}
+
+// Not specified by spec file
+message LaneSet {
+    repeated Lane lane = 1;
+}
+
+message Lane {
+    int32 id = 1;
+//    string type = 2;
+//    string level = 3;
+    LaneWidth width = 4;
+    repeated RoadMark road_mark = 5;
+}
+
+message RoadMark {
+//    double s_offset = 1;
+    string type = 2;
+//    string weight = 3;
+    string color = 4;
+//    string material = 5;
+    double width = 6;
+//    string lane_change = 7;
+//    double height = 8;
+}
+
+message LaneWidth {
+    double s_offset = 1;
+    double a = 2;
+    double b = 3;
+    double c = 4;
+    double d = 5;
+}
+
+message LaneSection {
+    double s = 1;
+    LaneSet left = 2;
+    LaneSet center = 3;
+    LaneSet right = 4;
+}
+
+//message Object {}
+
+//message Signal {}
+
+message Junction {
+    string name = 1;
+    string id = 2;
+    repeated Connection connection = 3;
+}
+
+message Connection {
+    string id = 1;
+    string incoming_road = 2;
+    string connecting_road = 3;
+    string contact_point = 4;
+    repeated ConnectionLaneLink lane_link = 5;
+}
+
+message ConnectionLaneLink {
+    int32 from = 1;
+    int32 to = 2;
+}
+
+message RoadLink {
+    RoadLinker predecessor = 1;
+    RoadLinker successor = 2;
+}
+
+// Not specified by spec file, predecessor or successor
+message RoadLinker {
+    string element_type = 1;
+    string element_id = 2;
+    string contact_point = 3;
+}
+
+message Road {
+    string name = 1;
+//    double length = 2;
+    string id = 3;
+//    string junction = 4;
+    RoadLink link = 5;
+    PlainView plain_view = 6;
+//    ElevationProfile elevation_profile = 7;
+//    LateralProfile lateral_profile = 8;
+    repeated Lanes lanes = 9;
+//    repeated Object object = 10;
+//    repeated Signal signal = 11;
+}
+
+message A {}
+message B { string name = 1; }
+
+message Map {
+    Header header = 1;
+    repeated Road road = 2;
+    repeated Junction junction = 3;
+}

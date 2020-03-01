@@ -1,0 +1,21 @@
+<launch>
+
+  <include file="$(find common)/launch/static_tf.launch" />
+  <include file="$(find odom_imu)/launch/odom_imu.launch" />
+  <rosparam file="$(find ndt_localization)/params/global.yaml" command="load" />
+
+  <node pkg="ndt_localization" type="ndt_localization_node" name="ndt_localization_node" output="screen">
+    <rosparam file="$(find ndt_localization)/params/test.yaml" />
+    <param name="global_map_file" value="$(find bag_file)/pcd/robo_0426_tf1.pcd" />
+    <!-- <remap from="/lslidar_point_cloud" to="/points_no_ground" /> -->
+  </node>
+
+  
+  <!-- <node pkg="gen_costmap" type="gen_costmap" name="local_costmap_node" output="screen">
+    <remap from="/lslidar_point_cloud" to="/points_no_ground" />
+    <remap from="/global_costmap" to="/map" />
+    <rosparam file="$(find gen_costmap)/cfg/gen_costmap.yaml" command="load" />
+  </node> -->
+
+</launch>
+

@@ -1,0 +1,8 @@
+<launch>
+  <node pkg="gen_costmap2" type="gen_costmap2_node" name="gen_costmap2_node" output="screen">
+     <param name="decay" value="100"/>
+    <remap from="/obstacle_pc" to="/points_no_ground" />
+    <remap from="/updated_map" to="/costmap" />
+    <remap from="/global_costmap" to="/map" />  
+</node>
+</launch>

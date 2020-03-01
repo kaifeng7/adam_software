@@ -1,0 +1,15 @@
+<launch>
+  <node pkg="imu_driver" type="imu_driver_node" name="imu_driver_node" launch-prefix="sudo">
+    <rosparam>
+   gyro_bias: {x: 0, y: 0, z: 0}
+   acc_bias: {x: 0, y: 0, z: 0}
+    </rosparam>
+    <param name="calibration_samples" value="200" />
+    <param name="perform_calibration" value="true" />
+  </node>
+
+  <node pkg="imu_complementary_filter" type="complementary_filter_node" name="complementary_filter_gain_node">
+    <param name="fixed_frame" value="odom" />
+    <param name="use_mag" value="false"/>
+  </node>
+</launch>

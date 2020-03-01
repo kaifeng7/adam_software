@@ -1,0 +1,19 @@
+<launch>
+
+
+	<!-- rosrun waypoint_follower pure_pursuit -->
+	<node pkg="waypoint_following" type="pure_pursuit" name="pure_pursuit" output="screen">
+	<rosparam file="$(find waypoint_following)/params/pure_pursuit.yaml" command="load"/>
+		<remap from="/sub_pose" to="/ndt/current_pose"/> 
+		<!-- <remap from="/sub_pose" to="/sim_pose"/>  -->
+
+		<!-- <remap from="/sub_path" to="/final_waypoints"/> -->
+		<remap from="/sub_path" to="/local_trajectories"/>
+		<remap from="/sub_velocity" to="/cmd_vel_x"/>
+
+		
+		<remap from="/cmd_vel" to="/vehicle_cmd" /> 
+	</node>
+	
+</launch>
+

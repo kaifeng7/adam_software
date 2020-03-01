@@ -1,0 +1,7 @@
+<launch>
+  <node pkg="pf_localization" type="trajectory_builder_rt.py" name="traj_builder">
+    <param name="save_path" value="$(find ndt_localization)/trajectories" />
+    <remap from="/current_pose" to="/ndt/current_pose" />
+  </node>
+  <!-- <node pkg="pf_localization" type=""> -->
+</launch>

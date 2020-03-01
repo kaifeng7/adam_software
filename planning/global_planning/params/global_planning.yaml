@@ -1,0 +1,4 @@
+smoothingDataWeight: 0.75
+smoothingSmoothWeight: 0.4
+smoothingToleranceError: 0.01
+pathDensity: 1

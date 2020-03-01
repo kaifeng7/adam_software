@@ -1,0 +1,14 @@
+<launch>
+  <node pkg="pf_localization" type="trajectory_loader.py" name="traj_loader">
+    <param name="trajectory" value="$(find ndt_localization)/trajectories/2019-05-30-14-06-10.traj" />
+  </node>
+  <node pkg="map_server" type="map_server" name="map_server" args="$(find static_map)/map_file/robo_0529.yaml">
+  </node>
+
+  <node pkg="pf_localization" type="smoothing_path.py" name="smooth_path">
+    <param name="load_or_not" value="true" />
+    <param name="save" value="true" />
+    <param name="save_path" value="$(find ndt_localization)/trajectories" />
+  </node>
+
+</launch>

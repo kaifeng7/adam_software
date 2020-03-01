@@ -1,0 +1,18 @@
+<launch>
+     <node pkg="map_server" type="map_server" name="gridmap_server" args="$(find static_map)/map_file/map.yaml"/> 
+   
+ <!--   <include file="$(find drive_control)/launch/drive_control.launch" /> -->
+    
+    <include file="$(find global_planning)/launch/global_planning.launch" /> 
+
+    <include file="$(find waypoint_follower_f)/launch/pure_pursuit.launch" />
+
+    <include file="$(find ros_protobuf)/launch/vector_map.launch" />
+
+    <include file="$(find op_local_planner_f)/launch/op_trajectory_generator.launch" />
+
+
+
+
+
+</launch>

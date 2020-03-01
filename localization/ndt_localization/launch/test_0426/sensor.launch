@@ -1,0 +1,8 @@
+<launch>
+  <include file="$(find lslidar_c16_decoder)/launch/lslidar_c16.launch" />
+  <include file="$(find encoder_driver)/launch/encoder.launch" />
+  <include file="$(find imu_driver)/launch/imu_driver.launch" />
+
+  <include file="$(find xrobot_imu_bridge)/launch/imu_ahrs.launch" />
+
+</launch>

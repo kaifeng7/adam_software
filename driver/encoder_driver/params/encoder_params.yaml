@@ -1,0 +1,9 @@
+gpioA_number: 396
+gpioB_number: 296
+#sample_rate: 2000
+sample_rate: 10000
+
+#wheel_radius: 0.03183
+wheel_radius: 0.2
+#encoder_pulse: 100
+encoder_pulse: 1000

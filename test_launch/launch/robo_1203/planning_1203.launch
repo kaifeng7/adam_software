@@ -1,0 +1,12 @@
+<launch>   
+
+    <node pkg="pf_localization" type="trajectory_loader.py" name="traj_loader">
+        <param name="trajectory" value="$(find ndt_localization)/trajectories/smoothed-2019-05-30-16-20-07.traj" />
+    </node>
+
+    <include file="$(find waypoint_following)/launch/pure_pursuit.launch" />
+
+    <include file="$(find local_planning)/launch/local_planning.launch" />
+    <include file="$(find car_info)/launch/car_info.launch" />
+</launch>
+

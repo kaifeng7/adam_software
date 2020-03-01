@@ -1,0 +1,6 @@
+#There are some params which will be loaded
+
+width: 1.0
+length: 1.8
+wheelBaseLength: 1.0
+turningRadius: 3

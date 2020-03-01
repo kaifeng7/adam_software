@@ -1,0 +1,10 @@
+<launch>
+    <node pkg="global_planning" type="global_planning_node" name="global_planning_node" output="screen">
+        <rosparam file = "$(find global_planning)/params/global_planning.yaml" command = "load"/>
+        <remap from="Global_trajectory" to="lane_waypoints_array" />
+		<!-- <remap from = "/current_pose" to="/ndt/current_pose"/> -->
+		<remap from = "/current_pose" to="/sim_pose"/>
+
+    </node>
+
+</launch>

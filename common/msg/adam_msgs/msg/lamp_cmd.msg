@@ -1,0 +1,2 @@
+bool l
+bool r

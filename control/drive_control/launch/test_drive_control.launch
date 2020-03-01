@@ -1,0 +1,7 @@
+<launch>
+    <include file="$(find common)/launch/static_tf.launch" />
+    <include file="$(find imu_driver)/launch/imu_driver.launch" />
+    <include file="$(find xrobot_imu_bridge)/launch/imu_ahrs.launch" />
+   <!-- <include file="$(find hall_sensor)/launch/hall_sensor.launch" /> -->
+    <include file="$(find odom_imu)/launch/odom_imu.launch" />
+</launch>

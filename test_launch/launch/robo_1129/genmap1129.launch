@@ -1,0 +1,11 @@
+<launch>
+  <node pkg="gen_costmap" type="gen_costmap" name="local_costmap_node" output="screen">
+    <remap from="/lslidar_point_cloud" to="/laser_cloud_surround" />
+    <remap from="/global_costmap" to="/map" />
+    <rosparam file="$(find gen_costmap)/cfg/gen_costmap.yaml" command="load" />
+  </node>
+
+    <!--<include file="$(find ray_ground_filter)/launch/ray_ground_filter.launch" /> -->
+
+
+</launch>

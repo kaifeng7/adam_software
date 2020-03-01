@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+    <name>waypoint_following</name>
+    <version>1.8.0</version>
+    <description>The waypoint_following package</description>
+    <maintainer email="fengkai@todo.todo">fengkai</maintainer>
+    <license>BSD</license>
+    <buildtool_depend>catkin</buildtool_depend>
+
+    <build_depend>roscpp</build_depend>
+    <build_depend>std_msgs</build_depend>
+    <build_depend>tf</build_depend>
+    <build_depend>geometry_msgs</build_depend>
+    <build_depend>nav_msgs</build_depend>
+    <build_depend>adam_msgs</build_depend>
+    <build_depend>utility</build_depend>
+    
+    <run_depend>roscpp</run_depend>
+    <run_depend>std_msgs</run_depend>
+    <run_depend>tf</run_depend>
+    <run_depend>geometry_msgs</run_depend>
+    <run_depend>nav_msgs</run_depend>
+    <run_depend>adam_msgs</run_depend>
+    <run_depend>utility</run_depend>
+    <export>
+    </export>
+</package>

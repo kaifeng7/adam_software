@@ -1,0 +1,9 @@
+<launch>
+
+    <node pkg="waypoint_following" type="after_currentpose_path" name="after_currentpose_path" output="screen">
+		<remap from="/loaded_trajectory/recorded_path" to="/local_trajectories"/>
+		<!-- <remap from="/loaded_trajectory/recorded_path" to="/lane_waypoints_array"/> -->
+
+		<!-- <remap from="/sim_pose" to="/ndt/current_pose"/>  -->
+	</node>
+</launch>

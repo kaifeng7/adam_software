@@ -1,0 +1,5 @@
+﻿lidar_camera_calibration:
+  camera_frame_topic: /usb_camera/image_raw
+  camera_info_topic: /usb_camera/camera_info
+  velodyne_topic: /lslidar_point_cloud
+

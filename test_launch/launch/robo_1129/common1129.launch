@@ -1,0 +1,10 @@
+<launch>
+    <include file="$(find common)/launch/static_tf.launch" />
+    <include file="$(find odom_imu)/launch/odom_imu.launch" />
+
+    <!--<node pkg="map_server" type="map_server" name="map_server" args="$(find static_map)/map_file/nantong.yaml" /> -->
+
+
+    <node pkg="map_server" type="map_server" name="map_server" args="$(find bag_file)/map_file/nantong.yaml" /> 
+
+</launch>

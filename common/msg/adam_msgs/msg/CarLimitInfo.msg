@@ -1,0 +1,18 @@
+Header header
+
+float64 max_speed_forward
+float64 min_speed_forward
+
+float64 max_speed_backword
+
+float64 max_steer_value
+float64 min_steer_value
+
+float64 max_brake_value
+float64 min_brake_value
+
+float64 max_steer_angle
+float64 min_steer_angle
+
+float64 max_acceleration
+float64 max_deceleration

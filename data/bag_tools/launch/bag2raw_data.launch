@@ -1,0 +1,12 @@
+<launch>
+  <arg name="bag_file" default="$(find bag_file)/1010_1200_all.bag" />
+  <arg name="dest_dir" default="$(find bag_file)/outdoor_data" />
+  <node pkg="bag_tools" type="bag2raw_data_node" name="bag2raw_data" output="screen">
+    <param name="bag_filename" value="$(arg bag_file)" />
+    <param name="dest_dir" value="$(arg dest_dir)" />
+    <param name="img_prefix" value="img_" />
+    <param name="pc_prefix" value="pc_" />
+    <param name="img_topic" value="/cv_cam/image_raw/compressed" />
+    <param name="pc_topic" value="/lslidar_point_cloud" />
+  </node>
+</launch>

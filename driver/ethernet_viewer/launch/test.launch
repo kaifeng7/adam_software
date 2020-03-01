@@ -1,0 +1,10 @@
+<launch>
+	<node pkg="ethernet_viewer" type="ethernet_viewer_node" name="viewer_node" output="screen"> 
+		<remap from="/viewer/pointcloud" to="/lslidar_point_cloud" />
+		<remap from="/viewer/image" to="/cv_camera/image_raw" />
+		<param name="device_ip" value="192.168.137.1" />
+		<param name="udp_port" value="8888" />
+		<param name="mcu_ip" value="192.168.137.3" />
+		<param name="mcu_udp_port" value="8888" />
+	</node>
+</launch>

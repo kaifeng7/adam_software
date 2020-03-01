@@ -1,0 +1,33 @@
+samplingTipMargin: 1.0
+samplingOutMargin: 5
+samplingSpeedFactor: 0.25
+
+
+pathDensity: 1
+lastInterpolationNumber: 4
+
+rollOutDensity: 0.3
+rollOutsNumber: 14
+
+rollOutDistance: 12.0
+planDistance: 20.0
+
+laneChangeSpeedFactor: 0.5
+obstacleThreshold: 10
+
+smoothingDataWeight: 0.47
+smoothingSmoothWeight: 0.2
+smoothingToleranceError:  0.2
+
+WeightTransition: 0.2
+WeightPriority: 0.2
+WeightObj: 0.35
+
+MaxSpeed: 2.0 
+MoreSpeed: 1.5
+LessSpeed: 1.0
+MinSpeed: 0.5
+
+MaxAngle: 9.0
+MidAngle: 6.0
+MinAngle: 3.0

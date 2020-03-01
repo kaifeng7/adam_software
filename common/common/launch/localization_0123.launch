@@ -1,0 +1,8 @@
+ <launch>
+    <include file="$(find gen_costmap)/launch/gen_costmap.launch" /> 
+
+    <include file="$(find ray_ground_filter)/launch/ray_ground_filter.launch" />
+
+    <include file="$(find ndt_localization)/launch/ndt_localization.launch" />
+
+</launch>

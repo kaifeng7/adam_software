@@ -1,0 +1,8 @@
+<launch>
+  <node pkg="drive_control" type="drive_control_node" name="drive_control_node" output="screen">
+    <remap from="/odom" to="/odom/imu" />
+    <rosparam file="$(find drive_control)/params/drive_control.yaml" command="load" />
+    <rosparam file="$(find drive_control)/params/forward.yaml" command="load" />
+    <rosparam file="$(find drive_control)/params/backward.yaml" command="load" />
+  </node>
+</launch>

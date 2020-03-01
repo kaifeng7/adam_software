@@ -1,0 +1,5 @@
+ <launch>   
+    <include file="$(find waypoint_following)/launch/pure_pursuit.launch" />
+    <include file="$(find local_planning)/launch/local_planning.launch" />
+    <include file="$(find car_info)/launch/car_info.launch" />
+</launch>
